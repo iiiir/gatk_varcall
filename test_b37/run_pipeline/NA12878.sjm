@@ -1,0 +1,1154 @@
+job_begin
+    name GATK.gatk_realignment-NA12878-1
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 1 1
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.1.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.1.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.1.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.1.realn.recal.bam 1
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.1.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.1.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.1.realn.recal.g.vcf.gz 1
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-2
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 2 2
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.2.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.2.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.2.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.2.realn.recal.bam 2
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.2.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.2.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.2.realn.recal.g.vcf.gz 2
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-3
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 3 3
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.3.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.3.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.3.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.3.realn.recal.bam 3
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.3.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.3.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.3.realn.recal.g.vcf.gz 3
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-4
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 4 4
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.4.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.4.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.4.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.4.realn.recal.bam 4
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.4.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.4.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.4.realn.recal.g.vcf.gz 4
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-5
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 5 5
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.5.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.5.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.5.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.5.realn.recal.bam 5
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.5.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.5.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.5.realn.recal.g.vcf.gz 5
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-6
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 6 6
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.6.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.6.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.6.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.6.realn.recal.bam 6
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.6.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.6.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.6.realn.recal.g.vcf.gz 6
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-7
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 7 7
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.7.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.7.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.7.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.7.realn.recal.bam 7
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.7.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.7.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.7.realn.recal.g.vcf.gz 7
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-8
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 8 8
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.8.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.8.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.8.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.8.realn.recal.bam 8
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.8.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.8.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.8.realn.recal.g.vcf.gz 8
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-9
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 9 9
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.9.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.9.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.9.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.9.realn.recal.bam 9
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.9.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.9.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.9.realn.recal.g.vcf.gz 9
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-10
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 10 10
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.10.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.10.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.10.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.10.realn.recal.bam 10
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.10.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.10.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.10.realn.recal.g.vcf.gz 10
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-11
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 11 11
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.11.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.11.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.11.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.11.realn.recal.bam 11
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.11.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.11.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.11.realn.recal.g.vcf.gz 11
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-12
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 12 12
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.12.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.12.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.12.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.12.realn.recal.bam 12
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.12.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.12.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.12.realn.recal.g.vcf.gz 12
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-13
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 13 13
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.13.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.13.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.13.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.13.realn.recal.bam 13
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.13.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.13.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.13.realn.recal.g.vcf.gz 13
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-14
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 14 14
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.14.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.14.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.14.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.14.realn.recal.bam 14
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.14.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.14.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.14.realn.recal.g.vcf.gz 14
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-15
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 15 15
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.15.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.15.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.15.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.15.realn.recal.bam 15
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.15.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.15.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.15.realn.recal.g.vcf.gz 15
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-16
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 16 16
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.16.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.16.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.16.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.16.realn.recal.bam 16
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.16.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.16.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.16.realn.recal.g.vcf.gz 16
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-17
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 17 17
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.17.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.17.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.17.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.17.realn.recal.bam 17
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.17.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.17.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.17.realn.recal.g.vcf.gz 17
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-18
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 18 18
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.18.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.18.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.18.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.18.realn.recal.bam 18
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.18.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.18.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.18.realn.recal.g.vcf.gz 18
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-19
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 19 19
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.19.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.19.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.19.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.19.realn.recal.bam 19
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.19.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.19.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.19.realn.recal.g.vcf.gz 19
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-20
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 20 20
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.20.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.20.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.20.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.20.realn.recal.bam 20
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.20.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.20.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.20.realn.recal.g.vcf.gz 20
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-21
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 21 21
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.21.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.21.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.21.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.21.realn.recal.bam 21
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.21.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.21.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.21.realn.recal.g.vcf.gz 21
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-22
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam 22 22
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.22.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.22.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.22.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.22.realn.recal.bam 22
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.22.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.22.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.22.realn.recal.g.vcf.gz 22
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-X
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam X X
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.X.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.X.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.X.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.X.realn.recal.bam X
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.X.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.X.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.X.realn.recal.g.vcf.gz X
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-Y
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam Y Y
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.Y.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.Y.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.Y.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.Y.realn.recal.bam Y
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.Y.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.Y.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.Y.realn.recal.g.vcf.gz Y
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-MT
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam MT MT
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.MT.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.MT.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.MT.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.MT.realn.recal.bam MT
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.MT.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.MT.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.MT.realn.recal.g.vcf.gz MT
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_realignment-NA12878-ctg
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_realn.sh /home/swang/app/gatk_varcall/test/NA12878.bam ctg  GL000207.1  GL000226.1  GL000229.1  GL000231.1  GL000210.1  GL000239.1  GL000235.1  GL000201.1  GL000247.1  GL000245.1  GL000197.1  GL000203.1  GL000246.1  GL000249.1  GL000196.1  GL000248.1  GL000244.1  GL000238.1  GL000202.1  GL000234.1  GL000232.1  GL000206.1  GL000240.1  GL000236.1  GL000241.1  GL000243.1  GL000242.1  GL000230.1  GL000237.1  GL000233.1  GL000204.1  GL000198.1  GL000208.1  GL000191.1  GL000227.1  GL000228.1  GL000214.1  GL000221.1  GL000209.1  GL000218.1  GL000220.1  GL000213.1  GL000211.1  GL000199.1  GL000217.1  GL000216.1  GL000215.1  GL000205.1  GL000219.1  GL000224.1  GL000223.1  GL000195.1  GL000212.1  GL000222.1  GL000200.1  GL000193.1  GL000194.1  GL000225.1  GL000192.1 
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_recalibrate-NA12878.ctg.realn
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_recal.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.ctg.realn.bam
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_haplotypecaller-NA12878.ctg.realn.recal
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_hc.sh /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.ctg.realn.recal.bam  GL000207.1  GL000226.1  GL000229.1  GL000231.1  GL000210.1  GL000239.1  GL000235.1  GL000201.1  GL000247.1  GL000245.1  GL000197.1  GL000203.1  GL000246.1  GL000249.1  GL000196.1  GL000248.1  GL000244.1  GL000238.1  GL000202.1  GL000234.1  GL000232.1  GL000206.1  GL000240.1  GL000236.1  GL000241.1  GL000243.1  GL000242.1  GL000230.1  GL000237.1  GL000233.1  GL000204.1  GL000198.1  GL000208.1  GL000191.1  GL000227.1  GL000228.1  GL000214.1  GL000221.1  GL000209.1  GL000218.1  GL000220.1  GL000213.1  GL000211.1  GL000199.1  GL000217.1  GL000216.1  GL000215.1  GL000205.1  GL000219.1  GL000224.1  GL000223.1  GL000195.1  GL000212.1  GL000222.1  GL000200.1  GL000193.1  GL000194.1  GL000225.1  GL000192.1 
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_genotypeGVCFs-NA12878.ctg.realn.recal.g
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_gt.sh NA12878.ctg.realn.recal.g.gt.vcf.gz /home/swang/app/gatk_varcall/test/run_pipeline/NA12878.ctg.realn.recal.g.vcf.gz  GL000207.1  GL000226.1  GL000229.1  GL000231.1  GL000210.1  GL000239.1  GL000235.1  GL000201.1  GL000247.1  GL000245.1  GL000197.1  GL000203.1  GL000246.1  GL000249.1  GL000196.1  GL000248.1  GL000244.1  GL000238.1  GL000202.1  GL000234.1  GL000232.1  GL000206.1  GL000240.1  GL000236.1  GL000241.1  GL000243.1  GL000242.1  GL000230.1  GL000237.1  GL000233.1  GL000204.1  GL000198.1  GL000208.1  GL000191.1  GL000227.1  GL000228.1  GL000214.1  GL000221.1  GL000209.1  GL000218.1  GL000220.1  GL000213.1  GL000211.1  GL000199.1  GL000217.1  GL000216.1  GL000215.1  GL000205.1  GL000219.1  GL000224.1  GL000223.1  GL000195.1  GL000212.1  GL000222.1  GL000200.1  GL000193.1  GL000194.1  GL000225.1  GL000192.1 
+    cmd_end
+job_end
+job_begin
+    name GATK.gatk_CatVCF-NA12878
+    memory 14G
+    queue pcgp
+    project CompBio
+    sge_options -A swang
+    cmd_begin
+        gatk_catvcf.sh NA12878.vcf.gz NA12878.1.realn.recal.g.gt.vcf.gz NA12878.2.realn.recal.g.gt.vcf.gz NA12878.3.realn.recal.g.gt.vcf.gz NA12878.4.realn.recal.g.gt.vcf.gz NA12878.5.realn.recal.g.gt.vcf.gz NA12878.6.realn.recal.g.gt.vcf.gz NA12878.7.realn.recal.g.gt.vcf.gz NA12878.8.realn.recal.g.gt.vcf.gz NA12878.9.realn.recal.g.gt.vcf.gz NA12878.10.realn.recal.g.gt.vcf.gz NA12878.11.realn.recal.g.gt.vcf.gz NA12878.12.realn.recal.g.gt.vcf.gz NA12878.13.realn.recal.g.gt.vcf.gz NA12878.14.realn.recal.g.gt.vcf.gz NA12878.15.realn.recal.g.gt.vcf.gz NA12878.16.realn.recal.g.gt.vcf.gz NA12878.17.realn.recal.g.gt.vcf.gz NA12878.18.realn.recal.g.gt.vcf.gz NA12878.19.realn.recal.g.gt.vcf.gz NA12878.20.realn.recal.g.gt.vcf.gz NA12878.21.realn.recal.g.gt.vcf.gz NA12878.22.realn.recal.g.gt.vcf.gz NA12878.X.realn.recal.g.gt.vcf.gz NA12878.Y.realn.recal.g.gt.vcf.gz NA12878.MT.realn.recal.g.gt.vcf.gz NA12878.ctg.realn.recal.g.gt.vcf.gz
+    cmd_end
+job_end
+order GATK.gatk_realignment-NA12878-1 before GATK.gatk_recalibrate-NA12878.1.realn
+order GATK.gatk_recalibrate-NA12878.1.realn before GATK.gatk_haplotypecaller-NA12878.1.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.1.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.1.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.1.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-2 before GATK.gatk_recalibrate-NA12878.2.realn
+order GATK.gatk_recalibrate-NA12878.2.realn before GATK.gatk_haplotypecaller-NA12878.2.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.2.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.2.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.2.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-3 before GATK.gatk_recalibrate-NA12878.3.realn
+order GATK.gatk_recalibrate-NA12878.3.realn before GATK.gatk_haplotypecaller-NA12878.3.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.3.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.3.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.3.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-4 before GATK.gatk_recalibrate-NA12878.4.realn
+order GATK.gatk_recalibrate-NA12878.4.realn before GATK.gatk_haplotypecaller-NA12878.4.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.4.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.4.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.4.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-5 before GATK.gatk_recalibrate-NA12878.5.realn
+order GATK.gatk_recalibrate-NA12878.5.realn before GATK.gatk_haplotypecaller-NA12878.5.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.5.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.5.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.5.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-6 before GATK.gatk_recalibrate-NA12878.6.realn
+order GATK.gatk_recalibrate-NA12878.6.realn before GATK.gatk_haplotypecaller-NA12878.6.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.6.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.6.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.6.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-7 before GATK.gatk_recalibrate-NA12878.7.realn
+order GATK.gatk_recalibrate-NA12878.7.realn before GATK.gatk_haplotypecaller-NA12878.7.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.7.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.7.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.7.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-8 before GATK.gatk_recalibrate-NA12878.8.realn
+order GATK.gatk_recalibrate-NA12878.8.realn before GATK.gatk_haplotypecaller-NA12878.8.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.8.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.8.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.8.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-9 before GATK.gatk_recalibrate-NA12878.9.realn
+order GATK.gatk_recalibrate-NA12878.9.realn before GATK.gatk_haplotypecaller-NA12878.9.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.9.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.9.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.9.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-10 before GATK.gatk_recalibrate-NA12878.10.realn
+order GATK.gatk_recalibrate-NA12878.10.realn before GATK.gatk_haplotypecaller-NA12878.10.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.10.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.10.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.10.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-11 before GATK.gatk_recalibrate-NA12878.11.realn
+order GATK.gatk_recalibrate-NA12878.11.realn before GATK.gatk_haplotypecaller-NA12878.11.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.11.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.11.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.11.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-12 before GATK.gatk_recalibrate-NA12878.12.realn
+order GATK.gatk_recalibrate-NA12878.12.realn before GATK.gatk_haplotypecaller-NA12878.12.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.12.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.12.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.12.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-13 before GATK.gatk_recalibrate-NA12878.13.realn
+order GATK.gatk_recalibrate-NA12878.13.realn before GATK.gatk_haplotypecaller-NA12878.13.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.13.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.13.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.13.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-14 before GATK.gatk_recalibrate-NA12878.14.realn
+order GATK.gatk_recalibrate-NA12878.14.realn before GATK.gatk_haplotypecaller-NA12878.14.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.14.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.14.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.14.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-15 before GATK.gatk_recalibrate-NA12878.15.realn
+order GATK.gatk_recalibrate-NA12878.15.realn before GATK.gatk_haplotypecaller-NA12878.15.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.15.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.15.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.15.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-16 before GATK.gatk_recalibrate-NA12878.16.realn
+order GATK.gatk_recalibrate-NA12878.16.realn before GATK.gatk_haplotypecaller-NA12878.16.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.16.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.16.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.16.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-17 before GATK.gatk_recalibrate-NA12878.17.realn
+order GATK.gatk_recalibrate-NA12878.17.realn before GATK.gatk_haplotypecaller-NA12878.17.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.17.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.17.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.17.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-18 before GATK.gatk_recalibrate-NA12878.18.realn
+order GATK.gatk_recalibrate-NA12878.18.realn before GATK.gatk_haplotypecaller-NA12878.18.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.18.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.18.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.18.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-19 before GATK.gatk_recalibrate-NA12878.19.realn
+order GATK.gatk_recalibrate-NA12878.19.realn before GATK.gatk_haplotypecaller-NA12878.19.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.19.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.19.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.19.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-20 before GATK.gatk_recalibrate-NA12878.20.realn
+order GATK.gatk_recalibrate-NA12878.20.realn before GATK.gatk_haplotypecaller-NA12878.20.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.20.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.20.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.20.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-21 before GATK.gatk_recalibrate-NA12878.21.realn
+order GATK.gatk_recalibrate-NA12878.21.realn before GATK.gatk_haplotypecaller-NA12878.21.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.21.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.21.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.21.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-22 before GATK.gatk_recalibrate-NA12878.22.realn
+order GATK.gatk_recalibrate-NA12878.22.realn before GATK.gatk_haplotypecaller-NA12878.22.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.22.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.22.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.22.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-X before GATK.gatk_recalibrate-NA12878.X.realn
+order GATK.gatk_recalibrate-NA12878.X.realn before GATK.gatk_haplotypecaller-NA12878.X.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.X.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.X.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.X.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-Y before GATK.gatk_recalibrate-NA12878.Y.realn
+order GATK.gatk_recalibrate-NA12878.Y.realn before GATK.gatk_haplotypecaller-NA12878.Y.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.Y.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.Y.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.Y.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-MT before GATK.gatk_recalibrate-NA12878.MT.realn
+order GATK.gatk_recalibrate-NA12878.MT.realn before GATK.gatk_haplotypecaller-NA12878.MT.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.MT.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.MT.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.MT.realn.recal.g before GATK.gatk_CatVCF-NA12878
+order GATK.gatk_realignment-NA12878-ctg before GATK.gatk_recalibrate-NA12878.ctg.realn
+order GATK.gatk_recalibrate-NA12878.ctg.realn before GATK.gatk_haplotypecaller-NA12878.ctg.realn.recal
+order GATK.gatk_haplotypecaller-NA12878.ctg.realn.recal before GATK.gatk_genotypeGVCFs-NA12878.ctg.realn.recal.g
+order GATK.gatk_genotypeGVCFs-NA12878.ctg.realn.recal.g before GATK.gatk_CatVCF-NA12878
