@@ -22,10 +22,10 @@ prepend-path PATH $pipeline_dir/scripts
 setenv JAVATMP /rgs01/scratch_space
 
 # setting up path for custermized apps required
-prepend-path PATH $app_dir/SJM/bin
 prepend-path PYTHONPATH $pipeline_dir/pythonlib
 
 # setting up apps from hpcf
+prepend-path PATH /hpcf/apps/sjm/install/1.2.0/bin
 prepend-path PATH /hpcf/apps/python/install/2.7.2/bin
 prepend-path LD_LIBRARY_PATH /hpcf/apps/python/install/2.7.2/lib
 prepend-path PATH /hpcf/apps/java/jdk1.7.0_05/bin
