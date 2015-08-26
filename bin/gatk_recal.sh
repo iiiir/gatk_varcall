@@ -4,13 +4,14 @@
 
 if [ $# -lt 1 ]
 then 
-	>&2 echo "Usage: $0 <bam>"
+	>&2 echo "Usage: $0 <out.bam> <in.bam>"
 	exit 1
 fi
 
+o=`cd \`dirname $1\`; pwd`/`basename $1`; shift
+opre=${o/realn.bam/realn.recal}
+
 f=`cd \`dirname $1\`; pwd`/`basename $1`
-o=`basename ${f%.bam}`
-o=${o/realn/realn.recal}
 
 optL=""
 
@@ -25,7 +26,7 @@ cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	--default_platform ILLUMINA \
 	--force_platform ILLUMINA \
 	-I $f \
-	-o $o.grp"
+	-o $opre.grp"
 echo $cmd
 eval $cmd
 
@@ -34,9 +35,9 @@ cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	-jar $GATKPATH/GenomeAnalysisTK.jar \
 	-R $ref_genome $optL \
 	-T PrintReads \
-	-BQSR $o.grp \
+	-BQSR $opre.grp \
 	-I $f \
-	-o $o.bam"
+	-o $o"
 echo $cmd
 eval $cmd
 

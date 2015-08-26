@@ -1,0 +1,56 @@
+#%Module1.0#
+###
+### modules modulefile
+###
+
+proc ModulesHelp { } {
+        global version compiler
+        puts stderr "\tGATK pipeline to call variant use HaplotypeCaller algorithm\n"
+}
+
+puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` > na12878.sjm"
+puts stderr "To run job file  : sjm na12878.sjm"
+
+# setting up pipeline executables
+set app_dir /home/swang/app
+set data_dir /nfs_exports/genomes/1/Homo_sapiens/GRCh38/Annotation_files/gatk_bundle_b38/bundle/2.8/GRCH38
+set pipeline_dir /home/swang/app/gatk_varcall
+prepend-path PATH $pipeline_dir/bin
+prepend-path PATH $pipeline_dir/scripts
+
+# setting up enviroment variables
+setenv JAVATMP /rgs01/scratch_space
+
+# setting up path for custermized apps required
+prepend-path PATH $app_dir/SJM/bin
+prepend-path PYTHONPATH $pipeline_dir/pythonlib
+
+# setting up apps from hpcf
+prepend-path PATH /hpcf/apps/python/install/2.7.2/bin
+prepend-path LD_LIBRARY_PATH /hpcf/apps/python/install/2.7.2/lib
+prepend-path PATH /hpcf/apps/java/jdk1.7.0_05/bin
+setenv GATKPATH /hpcf/apps/gatk/install/3.4
+setenv PICARDPATH /hpcf/apps/picard/install/1.129
+setenv BCFTOOLS_PLUGINS /hpcf/apps/bcftools/vendor/1.2/plugins
+setenv BCFTOOLS_PATH /hpcf/apps/install/1.2
+prepend-path LD_LIBRARY_PATH /hpcf/apps/bcftools/vendor/1.2/htslib-1.2.1
+prepend-path PATH /hpcf/apps/samtools/vendor/1.2
+prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
+prepend-path PATH /hpcf/apps/bwa/vendor/0.7.12
+prepend-path PATH /hpcf/apps/bedtools/vendor/2.17.0/bin
+prepend-path PATH /hpcf/apps/htslib/install/1.2.1/bin
+prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
+prepend-path PATH /hpcf/apps/vcftools/install/0.1.12b/bin
+prepend-path PERL5LIB /hpcf/apps/vcftools/install/0.1.12b/lib/perl5/site_perl
+
+# set up database
+setenv ref_genome /nfs_exports/genomes/1/Homo_sapiens/GRCh38/GRCh38_no_alt/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+setenv ref_chr_ctg /nfs_exports/genomes/1/Homo_sapiens/GRCh38/GRCh38_no_alt/GCA_000001405.15_GRCh38_no_alt_analysis_set.chr.ctg.txt
+setenv ref_build b38
+setenv dbSNP ${data_dir}/dbSNP_142_20150603_hg38.vcf.gz
+setenv dbSNP_129 ${data_dir}/dbsnp_138.hg38.excluding_sites_after_129.vcf.gz
+setenv thousandgenome_snp ${data_dir}/1000G_phase1.snps.high_confidence.hg38.vcf.gz
+setenv thousandgenome_indel ${data_dir}/1000G_phase1.indels.hg38.vcf.gz
+setenv mills_indel ${data_dir}/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+setenv omni ${data_dir}/1000G_omni2.5.hg38.vcf.gz
+setenv hapmap ${data_dir}/hapmap_3.3.hg38.vcf.gz

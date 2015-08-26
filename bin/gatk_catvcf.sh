@@ -17,14 +17,9 @@ shift
 
 vcfs=""
 for v in $@; do
-	#if [[ ! $v = *.vcf ]]; then
-	#	echo "Error! $v does not ends with .vcf!"
-	#	exit 1
-	#fi
 	vcfs="$vcfs -V $v"
 done
 
-#cmd="java -XX:ParallelGCThreads=4 -Xms10g -Xmx10g -Djava.io.tmpdir=$JAVATMP \
 cmd="java -cp ${GATKPATH}/GenomeAnalysisTK.jar org.broadinstitute.gatk.tools.CatVariants\
 	-R $ref_genome \
 	$vcfs \
@@ -37,4 +32,4 @@ cmd="bgzip -c $o > $ogz && tabix $ogz"
 echo $cmd
 eval $cmd
 
->&2 echo "*** -R span[hosts=1] -R rusage[mem=20000] -M 20000  ***"
+>&2 echo "*** Finished concatenating vcf/g.vcf files  ***"

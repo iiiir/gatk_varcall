@@ -1,0 +1,54 @@
+#%Module1.0#
+###
+### modules modulefile
+###
+
+proc ModulesHelp { } {
+        global version compiler
+        puts stderr "\tGATK pipeline to call variant use HaplotypeCaller algorithm\n"
+}
+
+puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` > na12878.sjm"
+puts stderr "To run job file  : sjm na12878.sjm"
+
+# setting up pipeline executables
+set app_dir /home/swang/app
+set data_dir /home/swang/data
+set pipeline_dir /home/swang/app/gatk_varcall
+prepend-path PATH $pipeline_dir/bin
+
+# setting up enviroment variables
+setenv JAVATMP /rgs01/scratch_space
+
+# setting up path for custermized apps required
+prepend-path PATH $app_dir/SJM/bin
+prepend-path PYTHONPATH $pipeline_dir/pythonlib
+
+# setting up apps from hpcf
+prepend-path PATH /hpcf/apps/python/install/2.7.2/bin
+prepend-path LD_LIBRARY_PATH /hpcf/apps/python/install/2.7.2/lib
+prepend-path PATH /hpcf/apps/java/jdk1.7.0_05/bin
+setenv GATKPATH /hpcf/apps/gatk/install/3.4
+setenv PICARDPATH /hpcf/apps/picard/install/1.129
+setenv BCFTOOLS_PLUGINS /hpcf/apps/bcftools/vendor/1.2/plugins
+setenv BCFTOOLS_PATH /hpcf/apps/install/1.2
+prepend-path LD_LIBRARY_PATH /hpcf/apps/bcftools/vendor/1.2/htslib-1.2.1
+prepend-path PATH /hpcf/apps/samtools/vendor/1.2
+prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
+prepend-path PATH /hpcf/apps/bwa/vendor/0.7.12
+prepend-path PATH /hpcf/apps/bedtools/vendor/2.17.0/bin
+prepend-path PATH /hpcf/apps/htslib/install/1.2.1/bin
+prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
+prepend-path PATH /hpcf/apps/vcftools/install/0.1.12b/bin
+prepend-path PERL5LIB /hpcf/apps/vcftools/install/0.1.12b/lib/perl5/site_perl
+
+# set up database
+setenv ref_build b37
+setenv ref_genome ${data_dir}/ref_genome/GRCh37-lite.fa
+setenv dbSNP ${data_dir}/b37/dbsnp_138.b37.vcf
+setenv dbSNP_129 ${data_dir}/b37/dbsnp_138.b37.excluding_sites_after_129.vcf
+setenv thousandgenome_snp ${data_dir}/b37/1000G_phase1.snps.high_confidence.b37.vcf
+setenv thousandgenome_indel ${data_dir}/b37/1000G_phase1.indels.b37.vcf
+setenv mills_indel ${data_dir}/b37/Mills_and_1000G_gold_standard.indels.b37.vcf
+setenv omni ${data_dir}/b37/1000G_omni2.5.b37.vcf
+setenv hapmap ${data_dir}/b37/hapmap_3.3.b37.vcf
