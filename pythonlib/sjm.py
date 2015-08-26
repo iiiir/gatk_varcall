@@ -45,7 +45,6 @@ class Job:
             cmd_prefix = '' if self.cmd_prefix is None else self.cmd_prefix
             cmd_strs = ['       %s %s' % (cmd_prefix, cmd) for cmd in self.cmds]
             s+=seperator.join(cmd_strs) + '\n'
-            # s+=(' %s\n'%('' if self.cmd_separator is None else self.cmd_separator)).join(['        %s %s'%(('' if self.cmd_prefix is None else self.cmd_prefix), cmd) for cmd in self.cmds])+"\n"
             s+='    cmd_end\n'
         s+='job_end\n'
         return s

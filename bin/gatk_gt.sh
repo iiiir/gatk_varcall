@@ -9,10 +9,10 @@ then
 fi
 
 
-ovcfgz=$1; shift
+ovcfgz=`cd \`dirname $1\`; pwd`/`basename $1`; shift
 [[ $ovcfgz = *.gz ]] && ovcf=${ovcfgz%.gz} || (echo "File is not gzipped!"; exit 0)
 
-gvcf=`realpath.sh $1`; shift
+gvcf=`cd \`dirname $1\`; pwd`/`basename $1`; shift
 optL=""
 for c in $@; do
     optL="$optL -L $c"

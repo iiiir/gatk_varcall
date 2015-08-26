@@ -12,7 +12,6 @@ puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` > na12878.s
 puts stderr "To run job file  : sjm na12878.sjm"
 
 # setting up pipeline executables
-set app_dir /home/swang/app
 set data_dir /nfs_exports/genomes/1/Homo_sapiens/GRCh38/Annotation_files/gatk_bundle_b38/bundle/2.8/GRCH38
 set pipeline_dir /home/swang/app/gatk_varcall
 prepend-path PATH $pipeline_dir/bin

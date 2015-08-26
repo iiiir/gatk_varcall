@@ -6,9 +6,6 @@ import argparse
 p = argparse.ArgumentParser()
 p.add_argument('--fai',help='FASTA fai indexing file')
 p.add_argument('--size', type=int, help='size in mega bases for partitioning parrallele jobs')
-# todo:
-#p.add_argument('--fasta',help='FASTA file')
-#p.add_argument('--by_contigs',help='partinion jobs by chrs and contigs')
 args = p.parse_args()
 
 if os.path.isfile(args.fai):

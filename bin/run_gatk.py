@@ -10,7 +10,7 @@ import util
 
 p = argparse.ArgumentParser(description='Generating the job file for the HugeSeq variant detection pipeline')
 p.add_argument('-b','--bam', metavar='STR', required=True, help='Support for aligned and dedupped BAMs as input')
-p.add_argument('-j', '--jobfile', metavar='FILE', required=True, help='The jobfile name (default: stdout)')
+p.add_argument('-j', '--jobfile', metavar='FILE', help='The jobfile name (default: stdout)')
 p.add_argument('-o', '--output', metavar='DIR', required=True, help='The output directory')
 p.add_argument('-r','--regions_file', metavar='FILE', required=True, help='A fiel that defines the regions of GATK parallele run')
 p.add_argument('-A','--account',metavar='STR', help='Account that were used to run the pipeline')
@@ -24,6 +24,7 @@ if args.jobfile is None:
     jobfile=None
 else:
     jobfile=util.File(args.jobfile)
+
 # set up directory
 outdir=util.Dir(args.output)
 logdir=util.Dir(outdir, 'log')
@@ -31,7 +32,6 @@ tmpdir=outdir
 if args.tmp: tmpdir=util.Dir(args.tmp)
 tmpdir.mkdirs()
 outdir.mkdirs()
-#logdir.mkdirs()
 
 sjm.Job.name_prefix="GATK"+"."
 sjm.Job.memory="10G" # default if not provided
@@ -40,11 +40,6 @@ sjm.Job.project="CompBio"
 if args.account: sjm.Job.sge_options="-A %s" % args.account
 tmpdir = getattr(__builtins__, 'str')(tmpdir)
 outdir = getattr(__builtins__, 'str')(outdir)
-#sjm.Job.cmd_prefix="/home/swang/bin/"
-#sjm.Job.cmd_prefix = sjm.Job.cmd_prefix + ' ' + tmpdir
-#sjm.Job.log_dir=logdir.path
-
-#print >> sys.stderr, args
 
 def gatk_realn(bamfile, regions_file):
     jobs=[]
@@ -146,7 +141,7 @@ jobs = gatk_gt(jobs)
 # merge vcf
 jobs = gatk_mvcf(jobs)
 
-# VQSR
+# VQSR todo
 #jobs = gatk_vqsr(jobs, ext)
 
 descout = sys.stdout if jobfile is None else open(jobfile.path, "w")
