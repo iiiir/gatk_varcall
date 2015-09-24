@@ -8,7 +8,7 @@ proc ModulesHelp { } {
         puts stderr "\tGATK pipeline to call variant use HaplotypeCaller algorithm\n"
 }
 
-puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` > na12878.sjm"
+puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` --tmp /rgs01/scratch_space/ -r \$ref_genome.gatk -j na12878.sjm"
 puts stderr "To run job file  : sjm na12878.sjm"
 
 # setting up pipeline executables
