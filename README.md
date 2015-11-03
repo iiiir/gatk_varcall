@@ -17,7 +17,15 @@ $ chmod +x gatk_varcall/bin/*
 ### usage
 $ cd gatk_varcall/test/
 $ run_gatk.py -b tiny_b38.bam -o `pwd` --tmp /rgs01/scratch_space/cap_tiny_test -r ../scripts/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gatk -j cap_tiny.sjm    
-$ sjm NA12878.sjm
+$ sjm NA12878.sjm    
+
+### recommanded changes
+1. Add the following line to your .bashrc (especially you frequently switch between b37 and b38):    
+export PS1='[\h \[\e[0;36m\]$ref_build\[\e[0m\] \W]\[\e[0;91m\]\$\[\e[0m\] '
+
+This will tell in the command line that:
+a) gatk_varcall is loaded and
+b) the genome build version
 
 ### Acknowledgement
 This pipeline is built based on hugeseq, but does variant call only

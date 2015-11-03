@@ -30,7 +30,7 @@ prepend-path PATH /hpcf/apps/java/jdk1.7.0_05/bin
 setenv GATKPATH /hpcf/apps/gatk/install/3.4
 setenv PICARDPATH /hpcf/apps/picard/install/1.129
 setenv BCFTOOLS_PLUGINS /hpcf/apps/bcftools/vendor/1.2/plugins
-setenv BCFTOOLS_PATH /hpcf/apps/install/1.2
+setenv BCFTOOLS_PATH /hpcf/apps/bcftools/install/1.2
 prepend-path LD_LIBRARY_PATH /hpcf/apps/bcftools/vendor/1.2/htslib-1.2.1
 prepend-path PATH /hpcf/apps/samtools/vendor/1.2
 prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
