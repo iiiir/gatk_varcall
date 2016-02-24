@@ -8,7 +8,7 @@ import sjm
 import util
 
 
-p = argparse.ArgumentParser(description='Generating the job file for the HugeSeq variant detection pipeline')
+p = argparse.ArgumentParser(description='Generating the job file for the GATK variant detection pipeline')
 p.add_argument('-b','--bam', metavar='STR', required=True, help='Support for aligned and dedupped BAMs as input')
 p.add_argument('-j', '--jobfile', metavar='FILE', help='The jobfile name (default: stdout)')
 p.add_argument('-o', '--output', metavar='DIR', required=True, help='The output directory, will be created if not present')

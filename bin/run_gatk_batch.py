@@ -7,7 +7,9 @@ import subprocess
 import sjm
 import util
 
-p = argparse.ArgumentParser(description='Generating the job file for the HugeSeq variant detection pipeline')
+# run_gatk_batch.py -B bam.lst -o `pwd` --tmp /rgs01/scratch_space -r $ref_genome.gatk -j joint.sjm -v joint_call
+
+p = argparse.ArgumentParser(description='Generating the job file for the GATK variant detection pipeline')
 g1 = p.add_mutually_exclusive_group(required=True)
 g2 = p.add_mutually_exclusive_group()
 p.add_argument('-A','--account',metavar='STR', help='Account that were used to run the pipeline')

@@ -10,7 +10,7 @@ The pipeline is for GRCh37 and GRCh38.
 + LSF batch system (or other)
 
 ### pipeline set up
-$ vi gatk_varcall/modulefiles/gatk_varcall_v3.4/b38    
+$ vi gatk_varcall/modulefiles/gatk_varcall/b38    
   change "set pipeline_dir /home/swang/app/gatk_varcall" to point to correct path    
 $ chmod +x gatk_varcall/bin/*    
 

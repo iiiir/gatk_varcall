@@ -12,7 +12,7 @@ puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` --tmp /rgs0
 puts stderr "To run job file  : sjm na12878.sjm"
 
 # setting up pipeline executables
-set data_dir /home/swang/data
+set data_dir /datasets/public/genomes/hsapiens/hg19/SNPS/gatk_bundle/hg19_2.8
 set pipeline_dir /home/swang/app/gatk_varcall
 prepend-path PATH $pipeline_dir/bin
 
@@ -33,7 +33,6 @@ setenv BCFTOOLS_PLUGINS /hpcf/apps/bcftools/vendor/1.2/plugins
 setenv BCFTOOLS_PATH /hpcf/apps/bcftools/install/1.2
 prepend-path LD_LIBRARY_PATH /hpcf/apps/bcftools/vendor/1.2/htslib-1.2.1
 prepend-path PATH /hpcf/apps/samtools/vendor/1.2
-prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
 prepend-path PATH /hpcf/apps/bwa/vendor/0.7.12
 prepend-path PATH /hpcf/apps/bedtools/vendor/2.17.0/bin
 prepend-path PATH /hpcf/apps/htslib/install/1.2.1/bin
