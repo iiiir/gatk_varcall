@@ -15,6 +15,7 @@ puts stderr "To run job file  : sjm na12878.sjm"
 set data_dir /datasets/public/genomes/hsapiens/hg19/SNPS/gatk_bundle/hg19_2.8
 set pipeline_dir /home/swang/app/gatk_varcall
 prepend-path PATH $pipeline_dir/bin
+prepend-path PATH $pipeline_dir/scripts
 
 # setting up enviroment variables
 setenv JAVATMP /rgs01/scratch_space
