@@ -12,7 +12,7 @@ puts stderr "To creat job file: run_gatk.py --bam in.bam --out `pwd` --tmp /rgs0
 puts stderr "To run job file  : sjm na12878.sjm"
 
 # setting up pipeline executables
-set data_dir /nfs_exports/genomes/1/Homo_sapiens/GRCh38/Annotation_files/hg38bundle
+set data_dir /datasets/public/genomes/hsapiens/hg19/SNPS/gatk_bundle/hg19_2.8
 set pipeline_dir /home/swang/app/gatk_varcall
 prepend-path PATH $pipeline_dir/bin
 prepend-path PATH $pipeline_dir/scripts
@@ -31,24 +31,23 @@ prepend-path PATH /hpcf/apps/java/jdk1.7.0_05/bin
 setenv GATKPATH /hpcf/apps/gatk/install/3.4
 setenv PICARDPATH /hpcf/apps/picard/install/1.129
 setenv BCFTOOLS_PLUGINS /hpcf/apps/bcftools/vendor/1.2/plugins
-setenv BCFTOOLS_PATH /hpcf/apps/install/1.2
+setenv BCFTOOLS_PATH /hpcf/apps/bcftools/install/1.2
 prepend-path LD_LIBRARY_PATH /hpcf/apps/bcftools/vendor/1.2/htslib-1.2.1
 prepend-path PATH /hpcf/apps/samtools/vendor/1.2
-prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
 prepend-path PATH /hpcf/apps/bwa/vendor/0.7.12
 prepend-path PATH /hpcf/apps/bedtools/vendor/2.17.0/bin
 prepend-path PATH /hpcf/apps/htslib/install/1.2.1/bin
+prepend-path PATH /hpcf/apps/bcftools/install/1.2/bin
 prepend-path PATH /hpcf/apps/vcftools/install/0.1.12b/bin
 prepend-path PERL5LIB /hpcf/apps/vcftools/install/0.1.12b/lib/perl5/site_perl
 
 # set up database
-setenv ref_genome /nfs_exports/genomes/1/Homo_sapiens/GRCh38/GRCh38_no_alt/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
-setenv ref_chr_ctg /nfs_exports/genomes/1/Homo_sapiens/GRCh38/GRCh38_no_alt/GCA_000001405.15_GRCh38_no_alt_analysis_set.chr.ctg.txt
-setenv ref_build b38
-setenv dbSNP ${data_dir}/dbsnp_146.hg38.vcf.gz
-setenv dbSNP_129 ${data_dir}/Homo_sapiens_assembly38.variantEvalGoldStandard.vcf.gz
-setenv thousandgenome_snp ${data_dir}/1000G_phase1.snps.high_confidence.hg38.vcf.gz
-setenv thousandgenome_indel ${data_dir}/Homo_sapiens_assembly38.known_indels.vcf.gz
-setenv mills_indel ${data_dir}/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
-setenv omni ${data_dir}/1000G_omni2.5.hg38.vcf.gz
-setenv hapmap ${data_dir}/hapmap_3.3.hg38.vcf.gz
+setenv ref_build hg19
+setenv ref_genome ${data_dir}/ref_genome/hg19.fa
+setenv dbSNP ${data_dir}/hg19/dbsnp_138.hg19.vcf
+setenv dbSNP_129 ${data_dir}/hg19/dbsnp_138.hg19.excluding_sites_after_129.vcf
+setenv thousandgenome_snp ${data_dir}/hg19/1000G_phase1.snps.high_confidence.hg19.vcf
+setenv thousandgenome_indel ${data_dir}/hg19/1000G_phase1.indels.hg19.vcf
+setenv mills_indel ${data_dir}/hg19/Mills_and_1000G_gold_standard.indels.hg19.vcf
+setenv omni ${data_dir}/hg19/1000G_omni2.5.hg19.vcf
+setenv hapmap ${data_dir}/hg19/hapmap_3.3.hg19.vcf

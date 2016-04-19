@@ -4,7 +4,7 @@
 
 if [ $# -lt 2 ]
 then 
-	>&2 echo "Usage: $0 <output.vcf> <1.vcf> [2.vcf]"
+	>&2 echo "Usage: $0 <output.vcf.gz> <1.vcf> [2.vcf]"
 	exit 1
 fi
 
