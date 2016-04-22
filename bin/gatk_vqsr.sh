@@ -30,7 +30,7 @@ fi
 # SW 4/15/2016: added QD and SOR
 # -an SOR give error:  not detected for ANY training variant in the input callset
 # --maxGaussians 4 group variants into 4 clusters ( for smaller number of variants)
-cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=8 -Djava.io.tmpdir=$JAVATMP \
+cmd="java -Xms20g -Xmx20g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	-jar ${GATKPATH}/GenomeAnalysisTK.jar \
 	-T VariantRecalibrator \
 	-R $ref_genome \
@@ -56,7 +56,7 @@ cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=8 -Djava.io.tmpdir=$JAVATMP \
 eval $cmd
 
 >&2 echo ">>> Applying snp recalibration"
-cmd="java -Xms5g -Xmx5g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
+cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	-jar ${GATKPATH}/GenomeAnalysisTK.jar \
 	-T ApplyRecalibration \
 	-R $ref_genome \
@@ -72,7 +72,7 @@ cmd="java -Xms5g -Xmx5g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 eval $cmd
 
 >&2 echo ">>> Performing indel recalibration"
-cmd="java -Xms5g -Xmx5g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
+cmd="java -Xms20g -Xmx20g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
     -jar ${GATKPATH}/GenomeAnalysisTK.jar \
     -T VariantRecalibrator \
     -R $ref_genome \
@@ -95,7 +95,7 @@ cmd="java -Xms5g -Xmx5g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 eval $cmd
 
 >&2 echo ">>> Applying indel recalibration"
-cmd="java -Xms5g -Xmx5g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
+cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
     -jar ${GATKPATH}/GenomeAnalysisTK.jar \
     -T ApplyRecalibration \
     -R $ref_genome \

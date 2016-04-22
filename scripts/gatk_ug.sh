@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
 
 function usage () {
    cat <<EOF
-Usage: $progname [-d|-c int] [-m int] [-l chr1:123-456] <out.vcf> <in.1.bam> [in.2.bam]
+Usage: $progname [-d|-c int] [-m int] [-l chr1:123-456] <out.vcf> <in.1.bam | bam.list> [in.2.bam]
 where:
-    -c Change the default coverage per-sample
+    -c Change the default down-sampling coverage per-sample
     -d Disable the downsampler
     -l Target regions for variant calling
     -m Maximum reads in an active region (HaplotypeCaller option where downsampling not work)
@@ -14,7 +14,7 @@ EOF
 }
 
 # set options
-while getopts ":c:m:d" opt; do
+while getopts ":c:m:l:d" opt; do
     case $opt in
         c)  [[ -n $optDT ]]  && usage || optCov="-dcov $OPTARG" ;;
 		d)  [[ -n $optCov ]] && usage || optDT="-dt NONE" ;;
@@ -38,6 +38,7 @@ if [[ $# -gt 10 ]]; then
 	inputs="-I $oname.bam.list"
 else
 	for bam in $bams; do
+		if [[ $bam = *.bam
 		inputs="-I $bam $inputs"
 	done
 fi
