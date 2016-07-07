@@ -38,7 +38,6 @@ if [[ $# -gt 10 ]]; then
 	inputs="-I $oname.bam.list"
 else
 	for bam in $bams; do
-		if [[ $bam = *.bam
 		inputs="-I $bam $inputs"
 	done
 fi
