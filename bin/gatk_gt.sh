@@ -24,7 +24,7 @@ cmd="java -Xms5g -Xmx5g -XX:ParallelGCThreads=8 -Djava.io.tmpdir=$JAVATMP \
 	-jar ${GATKPATH}/GenomeAnalysisTK.jar \
 	-T GenotypeGVCFs \
 	-R $ref_genome \
-	-nt 8 \
+	-nt 4 \
 	-D $dbSNP \
 	-V $gvcf $optL \
 	-o $ovcf"

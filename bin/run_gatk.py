@@ -87,11 +87,11 @@ def gatk_hc_batch(bamfile, regions_file):
         region_line = region_line.rstrip('\n')
         if region_line.startswith("#"): continue
         region_name, regions = region_line.split(' ',1)
-        job = sjm.Job('gatk_hc_batch-%s-%s'%(bamfile.prefix, region_name))
+        job = sjm.Job('gatk_hc_bam-%s-%s'%(bamfile.prefix, region_name))
         job.memory = "40G"
         job.output = os.path.join(tmpdir, '%s.%s.%s' % (bamfile.prefix, region_name,'g.vcf.gz'))
         job.regions = regions
-        job.append('gatk_hc_batch.sh %s %s %s'%(job.output, bamfile.path,regions))
+        job.append('gatk_hc_bam.sh %s %s %s'%(job.output, bamfile.path,regions))
         jobs.append(job)
     return jobs
 

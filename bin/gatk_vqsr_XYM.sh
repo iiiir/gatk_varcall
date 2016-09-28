@@ -4,15 +4,18 @@
 
 if [ $# -lt 1 ]
 then 
-	echo "Usage: $0 <vcf> [chrom]"
+	echo "Usage: $0 <outprefix> <X.vcf> <Y.vcf> <M.vcf>"
 	exit 1
 fi
 
-f=`cd \`dirname $1\`; pwd`/`basename $1`
-[[ $f = *.vcf.gz ]] && fname=`basename ${f%.vcf.gz}` || fname=`basename ${f%.vcf}`
+fname=$1; shift
 
-optL=""
-[[ ! -z $2 ]] && optL="-L $2"
+inVCFs=""
+for f in $@; do
+	f=`cd \`dirname $f\`; pwd`/`basename $f`
+	inVCFs="$inVCFs -input $f"
+done
+optL="-L chrX -L chrY -L chrM"
 
 >&2 echo ">>> Performing snp recalibration"
 #-an HaplotypeScore # option for unified genotyper
@@ -29,8 +32,8 @@ cmd="java -Xms20g -Xmx20g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	-resource:1000G,known=false,training=true,truth=false,prior=10.0 $thousandgenome_snp \
 	-resource:dbsnp,known=true,training=false,truth=false,prior=2.0 $dbSNP_129 \
 	$optL \
-    -an QD \
 	-an DP \
+	-an QD \
 	-an FS \
 	-an SOR \
 	-an MQ \
@@ -38,7 +41,7 @@ cmd="java -Xms20g -Xmx20g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	-an ReadPosRankSum \
 	-tranche 100.0 -tranche 99.9 -tranche 99.0 -tranche 90.0 \
 	-mode SNP \
-	-input $f \
+	$inVCFs \
 	-recalFile $fname.snp.recal \
 	-tranchesFile $fname.snp.tranches \
 	-rscriptFile $fname.snp.plots.R \
@@ -54,7 +57,7 @@ cmd="java -Xms10g -Xmx10g -XX:ParallelGCThreads=4 -Djava.io.tmpdir=$JAVATMP \
 	-R $ref_genome \
 	--ts_filter_level 99.5 \
 	-mode SNP \
-	-input $f \
+	$inVCFs \
 	-recalFile $fname.snp.recal \
 	-tranchesFile $fname.snp.tranches \
 	-log $fname.snp.vqsr.log \
