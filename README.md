@@ -21,27 +21,26 @@ $ run_gatk.py -b tiny_b38.bam -o `pwd` --tmp /rgs01/scratch_space/cap_tiny_test 
 $ sjm NA12878.sjm    
 
 #### 2. joint genotyping of less than 200 samples
-$ run_gatk_batch.py -B bam.lst -o `pwd` --tmp /rgs01/scratch_space -r $ref_genome.gatk -j joint.sjm -v joint_call
-$ sjm joint.sjm
+$ run_gatk_batch.py -B bam.lst -o `pwd` --tmp /rgs01/scratch_space -r $ref_genome.gatk -j joint.sjm -v joint_call    
+$ sjm joint.sjm    
 
 #### 3. merging g.vcf and joint genotyping for > 200 samples
 ( assuming g.vcf exited for each sample )
 ##### 3a. manually run for chromosome 1, merge gvcfs into 30 sample batches and joint genotyping all
-$ run_joint_from_gvcf.py -c 30 -v 1.chr1.g.vcf.gz 2.chr1.g.vcf.gz -o chr1.gt.vcf.gz -O folder -t chr1.merge -T chr1 -j jobs.sjm
-$ sjm jobs.sjm
-** note **
-- merging gvcf would require LARGE RAM and will be slow especially >100 samples
-
-##### 3b. modify gatk_varcall/scripts/setup_joint_gt.sh
+$ run_joint_from_gvcf.py -c 30 -v 1.chr1.g.vcf.gz 2.chr1.g.vcf.gz -o chr1.gt.vcf.gz -O folder -t chr1.merge -T chr1 -j jobs.sjm    
+$ sjm jobs.sjm    
+** note **    
+- merging gvcf would require LARGE RAM and will be slow especially >100 samples    
+##### 3b. modify gatk_varcall/scripts/setup_joint_gt.sh    
 
 ### recommanded changes
 1. Add the following line to your .bashrc (especially you frequently switch between b37 and b38):    
-export PS1='[\h \[\e[0;36m\]$ref_build\[\e[0m\] \W]\[\e[0;91m\]\$\[\e[0m\] '
+export PS1='[\h \[\e[0;36m\]$ref_build\[\e[0m\] \W]\[\e[0;91m\]\$\[\e[0m\] '    
 
-This will tell in the command line that:
-a) gatk_varcall is loaded and
-b) the genome build version
+This will tell in the command line that:    
+a) gatk_varcall is loaded and    
+b) the genome build version    
 
 ### Acknowledgement
-This pipeline is built based on hugeseq, but does variant call only
-https://github.com/StanfordBioinformatics/HugeSeq
+This pipeline is built based on hugeseq, but does variant call only    
+https://github.com/StanfordBioinformatics/HugeSeq    
