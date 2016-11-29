@@ -91,7 +91,7 @@ def gatk_hc_batch(bamfile, regions_file):
         job.memory = "40G"
         job.output = os.path.join(tmpdir, '%s.%s.%s' % (bamfile.prefix, region_name,'g.vcf.gz'))
         job.regions = regions
-        job.append('gatk_hc_bam.sh %s %s %s'%(job.output, bamfile.path,regions))
+        job.append('gatk_hc.sh %s %s %s'%(job.output, bamfile.path,regions))
         jobs.append(job)
     return jobs
 

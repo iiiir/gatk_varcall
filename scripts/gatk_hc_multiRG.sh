@@ -3,13 +3,14 @@
 >&2 echo "*** Variant call (HaplotypeCaller) ***"
 
 if [ $# -lt 2 ]; then 
-	>&2 echo "Usage: $0 <out.g.vcf.gz> <in.bam> [regions]"
+	>&2 echo "Usage: $0 <out.g.vcf.gz> <in.bam> <sample_name> [regions]"
 	exit 1
 fi
 
 ogz=`cd \`dirname $1\`; pwd`/`basename $1`; shift
 o=${ogz%.gz}
 f=`cd \`dirname $1\`; pwd`/`basename $1`; shift
+SAMPLE_NAME=$1; shift
 
 optL=""
 if [[ $# -gt 0 ]]; then
@@ -23,6 +24,7 @@ cmd="java -XX:ParallelGCThreads=4 -Xms10g -Xmx10g -Djava.io.tmpdir=$JAVATMP \
 	-jar ${GATKPATH}/GenomeAnalysisTK.jar \
 	-T HaplotypeCaller \
 	-R $ref_genome \
+	--sample_name $SAMPLE_NAME \
 	--emitRefConfidence GVCF \
 	--variant_index_type LINEAR \
 	--variant_index_parameter 128000 \

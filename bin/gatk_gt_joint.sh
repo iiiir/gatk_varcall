@@ -17,7 +17,7 @@ for f in $@; do
 done
 
 >&2 echo ">>> Performing  variant genotyping"
-cmd="java -Xms20g -Xmx20g -XX:ParallelGCThreads=8 -Djava.io.tmpdir=$JAVATMP \
+cmd="java -Xms15g -Xmx15g -XX:ParallelGCThreads=8 -Djava.io.tmpdir=$JAVATMP \
 	-jar ${GATKPATH}/GenomeAnalysisTK.jar \
 	-T GenotypeGVCFs \
 	-R $ref_genome \
@@ -27,4 +27,4 @@ cmd="java -Xms20g -Xmx20g -XX:ParallelGCThreads=8 -Djava.io.tmpdir=$JAVATMP \
 	-o $ovcf"
 eval $cmd
 
->&2 echo "*** -R span[hosts=1] -R rusage[mem=20000] -M 20000 ***"
+>&2 echo "*** -R span[hosts=1] -R rusage[mem=10000] -n 4 -q pcgp ***"
