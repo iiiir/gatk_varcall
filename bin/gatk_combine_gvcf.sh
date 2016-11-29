@@ -12,8 +12,6 @@ for gvcf in $@; do
 	gvcfs="$gvcfs -V $gvcf"
 done
 
-
-# adding --setKey otherwise the set field is added
 cmd="java -XX:ParallelGCThreads=4 -Xms20g -Xmx20g -Djava.io.tmpdir=$JAVATMP 
 	-jar $GATKPATH/GenomeAnalysisTK.jar \
 	-T CombineGVCFs \
