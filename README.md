@@ -29,17 +29,32 @@ $ sjm joint.sjm
 ##### 3a. manually run for chromosome 1, merge gvcfs into 30 sample batches and joint genotyping all
 $ run_joint_from_gvcf.py -c 30 -v 1.chr1.g.vcf.gz 2.chr1.g.vcf.gz -o chr1.gt.vcf.gz -O folder -t chr1.merge -T chr1 -j jobs.sjm    
 $ sjm jobs.sjm    
+
 ** note **    
 - merging gvcf would require LARGE RAM and will be slow especially >100 samples    
+
 ##### 3b. modify gatk_varcall/scripts/setup_joint_gt.sh    
 
 ### recommanded changes
-1. Add the following line to your .bashrc (especially you frequently switch between b37 and b38):    
+Add the following line to your .bashrc (especially you frequently switch between b37 and b38):    
 export PS1='[\h \[\e[0;36m\]$ref_build\[\e[0m\] \W]\[\e[0;91m\]\$\[\e[0m\] '    
 
 This will tell in the command line that:    
 a) gatk_varcall is loaded and    
 b) the genome build version    
+
+
+### understand ID and SM in RG tag    
+ID:    
+- ID is taged for each read in teh BAM    
+- ID do not need to carry any meaning as it is used as uniq key.    
+- Can be used to distinguish the reads from different experiments. for example if your initial sequencing    
+does not have enough coverage, and a topoff was done to get more reads. ID could be "NA12878" and "NA12878-topoff" to distinguish every reads.    
+    
+SM:    
+- Every BAM is encouraged to have one SM tag, unless in rare scenario you need to merge numtiple samples together.    
+- SM is used by GATK as sample name in variant call step (write to VCF file). if there are multiple SM tag in a BAM GATK HC caller (gvcf mode) would be confused.    
+- SM can be identical to ID for one sample, one experiemnts cases.    
 
 ### Acknowledgement
 This pipeline is built based on hugeseq, but does variant call only    
